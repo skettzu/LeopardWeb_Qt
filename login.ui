@@ -38,7 +38,7 @@
      <string>Login</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -60,7 +60,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -88,7 +88,7 @@
     <rect>
      <x>40</x>
      <y>270</y>
-     <width>49</width>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>

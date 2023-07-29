@@ -8,10 +8,10 @@ Login::Login(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QSqlDatabase LB_DB = QSqlDatabase::addDatabase("QSQLITE");
-    LB_DB.setDatabaseName("D:/DB/LeopardWeb_Implementation.db");
+    QSqlDatabase LB_DB = QSqlDatabase::addDatabase("QSQLITE");  // Add SQLITE DATABASE
+    LB_DB.setDatabaseName("D:/DB/LeopardWeb_Implementation.db");// Set to database path you want to use
 
-    if(!LB_DB.open()){
+    if(!LB_DB.open()){  // Check for database connection
         ui->label_3->setText(("Failed to open the database"));
     }
     else{
