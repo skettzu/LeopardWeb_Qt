@@ -6,6 +6,7 @@ Login::Login(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Login)
 {
+    User default_usr;
     ui->setupUi(this);
 
     QSqlDatabase LB_DB = QSqlDatabase::addDatabase("QSQLITE");  // Add SQLITE DATABASE
@@ -26,14 +27,25 @@ Login::~Login()
 
 void Login::on_pushButton_login_clicked()
 {
+
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();
+    QSqlQuery q;
 
-    if(username == "test" && password == "test"){
-        QMessageBox::information(this, "Login", "Username and password is correct");
+    if(q.exec(("SELECT 1 FROM CREDENTIAL WHERE (Username = '" + username + "' AND Password = '" + password + "'); "))){ // check if query is valid
+        int count=0;
+        while(q.next()){    // checks if there is next element in resulting table
+            count++;
+        }
+        if(count==0){       // if there is nothing in resulting table, return warning
+            QMessageBox::warning(this, "Login", "Username and password is not correct");
+        }
+        else {
+            QMessageBox::information(this,"Login", "Username and password is correct");
+        }
     }
-    else {
-        QMessageBox::warning(this,"Login", "Username and password is not correct");
+    else{
+        QMessageBox::warning(this, "Login", "Query Did Not Execute!");
     }
 }
 

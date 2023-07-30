@@ -1,27 +1,31 @@
-#pragma once
-#include "User.h"
+#ifndef INSTRUCTOR_H
+#define INSTRUCTOR_H
 
-class Instructor :
-	public User {
-	// attributes
+#include "user.h"
+using std::string;
 
+class Instructor : public User
+{
 public:
-	// construstor
+    // construstor
 
-	Instructor();
-	Instructor(string first);
-	Instructor(string first, string last);
-	Instructor(string first, string last, int ID);
+    Instructor();
+    Instructor(string first);
+    Instructor(string first, string last);
+    Instructor(string first, string last, int ID);
 
-	// method
+    /*/ method
 
-	void addCourse(sqlite3* DB, string user_crn);
-	void dropCourse(sqlite3* DB, string user_crn);
-	void printRoster(sqlite3* DB);
-	void printSchedule();
-	void printClassList();
-
-	// destructor
-	~Instructor();
+    void addCourse(sqlite3* DB, string user_crn);
+    void dropCourse(sqlite3* DB, string user_crn);
+    void printRoster(sqlite3* DB);
+    void printSchedule();
+    void printClassList();
+    */
+    // destructor
+    ~Instructor();
 
 };
+
+
+#endif // INSTRUCTOR_H

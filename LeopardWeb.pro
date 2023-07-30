@@ -1,9 +1,17 @@
 HEADERS       = ../connection.h \
+                admin.h \
+                instructor.h \
                 login.h \
-                tableeditor.h
+                student.h \
+                tableeditor.h \
+                user.h
 SOURCES       = main.cpp \
+                admin.cpp \
+                instructor.cpp \
                 login.cpp \
-                tableeditor.cpp
+                student.cpp \
+                tableeditor.cpp \
+                user.cpp
 QT           += sql widgets
 requires(qtConfig(tableview))
 

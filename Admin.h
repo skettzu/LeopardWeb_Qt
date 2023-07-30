@@ -1,29 +1,33 @@
-#pragma once
-#include "User.h"
+#ifndef ADMIN_H
+#define ADMIN_H
 
-class Admin :
-	public User {
-	// attributes
+#include "user.h"
+#include <string>
 
+class Admin : public User
+{
 public:
-	// construstor
 
-	Admin();
-	Admin(string first);
-	Admin(string first, string last);
-	Admin(string first, string last, int ID);
+    // constructor
 
-	// method
-	void addCourse(sqlite3* DB, string course);
-	void removeCourse(sqlite3* DB, int CRN);
-	void addUser();
-	void removeUser();
-	void addStudent();
-	void removeStudent();
-	void searchRoster();
-	void printCourses();
+    Admin();
+    Admin(std::string first);
+    Admin(std::string first, std::string last);
+    Admin(std::string first, std::string last, int ID);
+/*
+    // method
+    void addCourse(sqlite3* DB, string course);
+    void removeCourse(sqlite3* DB, int CRN);
+    void addUser();
+    void removeUser();
+    void addStudent();
+    void removeStudent();
+    void searchRoster();
+    void printCourses();
 
-	// destructor
-	~Admin();
-
+    // destructor
+    ~Admin();
+    */
 };
+
+#endif // ADMIN_H
